@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -51,17 +50,19 @@ public class GameConfig : MonoBehaviour {
             if (bgmAudio != null) {
                 bgmAudio.volume = bgmSlider.value;
                 bgmSlider.value = bgmAudio.volume;
-                if (bgmAudio.volume == 0) bgmAudio.mute = true;
-                else bgmAudio.mute = false;
-                PlayerPrefs.SetFloat("BGM", bgmAudio.volume);
+                if (bgmAudio.volume == 0) bgmToggle.isOn = false;
+                else bgmToggle.isOn = true;
+                if (bgmToggle.isOn == true)
+                    PlayerPrefs.SetFloat("BGM", bgmAudio.volume);
             }
 
             if (sfxAudio != null) {
                 sfxAudio.volume = sfxSlider.value;
                 sfxSlider.value = sfxAudio.volume;
-                if (sfxAudio.volume == 0) sfxAudio.mute = true;
-                else sfxAudio.mute = false;
-                PlayerPrefs.SetFloat("SFX", sfxAudio.volume);
+                if (sfxAudio.volume == 0) sfxToggle.isOn = true;
+                else sfxToggle.isOn = true;
+                if (sfxToggle.isOn == true)
+                    PlayerPrefs.SetFloat("SFX", sfxAudio.volume);
             }
         }
     }
@@ -88,13 +89,39 @@ public class GameConfig : MonoBehaviour {
         }
 
         resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionValue = currentResolutionIndex;
+        if (Screen.fullScreen)
+            windowModeDropdown.value = 0;
+        else
+            windowModeDropdown.value = 1;
+        UpdateResolution();
     }
 
-    public void BGMMute() { bgmAudio.mute = bgmToggle.isOn; }
+    public void BGMMute(bool state) {
+        bgmAudio.mute = state;
+        bgmToggle.isOn = state;
+        if (!state) {
+            bgmAudio.volume = 0;
+            bgmSlider.value = 0;
+        } else {
+            bgmAudio.volume = PlayerPrefs.GetFloat("BGM", bgmAudio.volume);
+            bgmSlider.value = bgmAudio.volume;
+        }            
+    }
 
-    public void SFXMute() { sfxAudio.mute = sfxToggle.isOn; }
+    public void SFXMute(bool state) {
+        sfxAudio.mute = state;
+        sfxToggle.isOn = state;
+        if (!state) {
+            sfxAudio.volume = 0;
+            sfxSlider.value = 0;
+        } else {
+            sfxAudio.volume = PlayerPrefs.GetFloat("SFX", sfxAudio.volume);
+            sfxSlider.value = sfxAudio.volume;
+        }
+    }
 
     public void UpdateResolution() {
         resolutionValue = resolutionDropdown.value;
@@ -113,6 +140,7 @@ public class GameConfig : MonoBehaviour {
     }
 
     public void LoadScene(int scene) {
+        if (Time.timeScale == 0) Time.timeScale = 1;
         SceneManager.LoadSceneAsync(scene);
     }
 

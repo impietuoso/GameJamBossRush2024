@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMovement : MonoBehaviour
-{
+public class ProjectileMovement : MonoBehaviour {
     public float speed;
     public float direction;
     public float lifeTime;
+    float cTime = 0;
     public string tagName;
 
     Rigidbody2D rb;
@@ -14,7 +14,19 @@ public class ProjectileMovement : MonoBehaviour
     private void OnEnable() {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(speed * direction, 0);
-        Invoke("DisableProjectile", lifeTime);
+        cTime = 0;
+    }
+
+    private void OnDisable() {
+        cTime = 0;
+    }
+
+    private void Update() {
+        cTime += Time.deltaTime;
+        if(cTime >= lifeTime) {
+            cTime = 0;
+            DisableProjectile();
+        }
     }
 
     public void DisableProjectile() {
@@ -24,7 +36,7 @@ public class ProjectileMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.tag == tagName) {
-            //Call Action
+            col.transform.parent.GetComponent<Boss>().TakeDamage(5);
             DisableProjectile();
         }
     }

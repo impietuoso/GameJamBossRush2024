@@ -23,6 +23,8 @@ public class PlayerInput : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) tm.MoveRight();
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) tm.MoveLeft();
             if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.J)) pa.NormalAttack();
+            if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.K)) pa.SpecialSkill1();
+            if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.L)) pa.SpecialSkill2();
         }
     }
 }
