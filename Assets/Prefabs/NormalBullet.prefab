@@ -166,6 +166,8 @@ MonoBehaviour:
   direction: 1
   lifeTime: 1
   tagName: Enemy
+  playOnAwake: 0
+  clip: {fileID: 0}
 --- !u!95 &4375696110474283432
 Animator:
   serializedVersion: 5

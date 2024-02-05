@@ -91,7 +91,7 @@ public class Boss : MonoBehaviour, ISkillUser {
     }
 
     public void OnDeath() {
-        EndGame.instance.Lose();
+        EndGame.instance.GameWin();
     }
 
 }

@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableTime: 0.5
+  playOnAwake: 1
+  clip: {fileID: 8300000, guid: 4bf83e38cc753594ca1a9f146a5b6f65, type: 3}
 --- !u!95 &7770237152336609556
 Animator:
   serializedVersion: 5

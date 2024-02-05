@@ -4,6 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Mortar")]
 public class Mortar : Skill {
+    public AudioClip audio;
     [SerializeField]
     List<Vector2Int[]> enemyPatterns = new List<Vector2Int[]>(){
         new Vector2Int[] { new(0, 0), new(2, 0), new(1, 1), new(0, 2), new(2, 2) },
@@ -64,6 +65,7 @@ public class Mortar : Skill {
     IEnumerator SelectPlayerPattern(bool charged) {
         yield return null;
         int randomPattern = Random.Range(0, 3);
+        PlaySound.instance.Play(audio);
         if (charged) {
             foreach (var tilePos in chargedPlayerPatterns[randomPattern]) {
                 Field.instance.TelegraphAttack(tilePos, attackDelay);
@@ -95,6 +97,7 @@ public class Mortar : Skill {
         yield return null;
         int randomPattern = Random.Range(0, 3);
 
+        PlaySound.instance.Play(audio);
         foreach (var tilePos in enemyPatterns[randomPattern]) {
             Field.instance.TelegraphAttack(tilePos, attackDelay);
         }

@@ -18,3 +18,4 @@ MonoBehaviour:
   attackDelay: 0.5
   fireRate: 1
   skillObj: {fileID: 6867310415078895879, guid: 7f1c9624c46fe3641a866fc9425663e6, type: 3}
+  audio: {fileID: 8300000, guid: 8e0bad0cb584f2246a8764c4a3cbbf50, type: 3}

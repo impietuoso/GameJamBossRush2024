@@ -75,6 +75,6 @@ public class PlayerAttacks : MonoBehaviour, ISkillUser {
     }
 
     public void OnDeath() {
-        EndGame.instance.GameWin();
+        EndGame.instance.Lose();
     }
 }

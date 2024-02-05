@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2cc16264c683044aeae2b5d9ebaf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtSound: {fileID: 8300000, guid: 81673ce6d59b59b41ab9305f0f48c5c0, type: 3}
-  attackSound: {fileID: 8300000, guid: b7e3ed3faaf52a645be9587b3dc844d8, type: 3}
+  hurtSound: {fileID: 8300000, guid: 2faea36f17e71e54388d14c6f29d803b, type: 3}
+  attackSound: {fileID: 8300000, guid: 1191e03b6eefc174f952de0e1a574280, type: 3}
 --- !u!95 &1980553247482880382
 Animator:
   serializedVersion: 5

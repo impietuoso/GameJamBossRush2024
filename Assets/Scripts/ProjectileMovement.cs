@@ -8,6 +8,8 @@ public class ProjectileMovement : MonoBehaviour {
     public float lifeTime;
     float cTime = 0;
     public string tagName;
+    public bool playOnAwake;
+    public AudioClip clip;
 
     Rigidbody2D rb;
 
@@ -15,6 +17,7 @@ public class ProjectileMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(speed * direction, 0);
         cTime = 0;
+        if (playOnAwake) PlayOnAwake();
     }
 
     private void OnDisable() {
@@ -32,6 +35,10 @@ public class ProjectileMovement : MonoBehaviour {
     public void DisableProjectile() {
         rb.velocity = Vector2.zero;
         gameObject.SetActive(false);
+    }
+
+    public void PlayOnAwake() {
+        if(clip) PlaySound.instance.Play(clip);
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

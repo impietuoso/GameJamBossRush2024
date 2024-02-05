@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2cc16264c683044aeae2b5d9ebaf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtSound: {fileID: 8300000, guid: 81673ce6d59b59b41ab9305f0f48c5c0, type: 3}
+  hurtSound: {fileID: 8300000, guid: 2faea36f17e71e54388d14c6f29d803b, type: 3}
   attackSound: {fileID: 8300000, guid: b7e3ed3faaf52a645be9587b3dc844d8, type: 3}
 --- !u!95 &4149165255301327823
 Animator:
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4149165256308618298}
   - component: {fileID: 4149165256308618299}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,9 +184,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1552492309, guid: a73046181299fb14998d1834e5c387c7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.16212654, a: 1}
-  m_FlipX: 1
+  m_Sprite: {fileID: -2134545770, guid: 494798b661db6d44bb59be216f386189, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -227,8 +227,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
-  m_Size: {x: 0.3, y: 0.85}
+  m_Offset: {x: 0.016358793, y: -0.021723986}
+  m_Size: {x: 0.6598946, y: 0.9263413}
   m_Direction: 0
 --- !u!1 &4149165256454871020
 GameObject:
