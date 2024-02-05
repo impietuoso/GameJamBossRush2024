@@ -285,7 +285,7 @@ MonoBehaviour:
   pos: {fileID: 11605504301988068}
   skill: {fileID: 11400000, guid: de0ee4b78ecae2e4387e31a598c21dd7, type: 2}
   skill2: {fileID: 11400000, guid: f1056e2e89359274b9b6b23e8f55c32b, type: 2}
-  life: 100
+  life: 120
   chargedAttack: 0
   lifeBar: {fileID: 2024511705383313541}
   canAttack: 1

@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4149165256308618292}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4149165255301327816
 MonoBehaviour:
@@ -68,10 +68,11 @@ MonoBehaviour:
   skills:
   - {fileID: 11400000, guid: de0ee4b78ecae2e4387e31a598c21dd7, type: 2}
   - {fileID: 11400000, guid: f1056e2e89359274b9b6b23e8f55c32b, type: 2}
-  life: 200
+  life: 350
   timer: 0
   movetimer: 0
-  moveRate: 2
+  moveRate: 1.5
+  skillTimer: 4
   canMove: 1
   lifeBar: {fileID: 4149165256454871026}
   tm: {fileID: 0}

@@ -13,6 +13,8 @@ public class Boss : MonoBehaviour, ISkillUser {
     [Range(0, 10)]
     public float movetimer;
     public float moveRate;
+    [Range(0,10)]
+    public float skillTimer;
     private bool canAttack = true;
     public bool canMove = true;
     Animator anim;
@@ -41,7 +43,7 @@ public class Boss : MonoBehaviour, ISkillUser {
 
     public void Update() {
         if (canAttack) {
-            if (timer >= 10) {
+            if (timer >= skillTimer) {
                 timer = 0;
                 int rSkill = Random.Range(0, skills.Length);
                 skills[rSkill].UseSkill(this, true);
